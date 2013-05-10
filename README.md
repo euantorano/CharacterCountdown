@@ -4,14 +4,18 @@ jQuery plugin to countdown characters remaining that can be inserted in a text f
 
 ##Usage
 
-This is a very simple plugin. ALl you need to do is include the plugin file in your HTML then initialize the elements and the JS:
+This is a very simple plugin. All you need to do is include the plugin file in your HTML then initialize the elements and the JS:
 
-	<textarea name="status" id="input_status"></textarea>
-	<span class="countdown" id="input_status_countdown" title="Maximum character count.">250</span>
+```html
+<textarea name="status" id="input_status"></textarea>
+<span class="countdown" id="input_status_countdown" title="Maximum character count.">250</span>
+```
 
-	$(document).ready(function() {
-		$('#input_status').charCountdown({ charLimit : 140, charsRemainingText : ' characters remaining' });
-	});
+```javascript
+$(document).ready(function() {
+	$('#input_status').charCountdown({ charLimit : 140, charsRemainingText : ' characters remaining' });
+});
+```
 
 You can optionally pass in the charLimit and charsRemainingText parameters.
 
