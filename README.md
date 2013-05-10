@@ -17,7 +17,8 @@ $(document).ready(function() {
 });
 ```
 
-You can optionally pass in the charLimit and charsRemainingText parameters.
+You can optionally pass in the charLimit, charsRemainingText, preventExcessChars parameters.
 
-- charLimit defaults to 250
-- charsRemainingText defaults to ''
+- charLimit defaults to 250 - the amount of characters allowed.
+- charsRemainingText defaults to '' - you can optionally set this to include some text after the count such as "250 characters remaining".
+- preventExcessChars defaults to false - you can forcibly trim excess characters from the end of the input by setting this parameter to true.

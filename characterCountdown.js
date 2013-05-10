@@ -3,6 +3,7 @@
 		var settings = $.extend({
 			charLimit : 250,
 			charsRemainingText : '',
+			preventExcessChars : false,
 		}, options);
 
 		var _input = this;
@@ -12,6 +13,10 @@
 
 		if (_remainingChars <= 0) {
 			_countdown.addClass('countdown--invalid').removeClass('countdown--valid');
+
+			if (settings.preventExcessChars) {
+				_input.val(_input.val().substr(0, settings.charLimit));
+			}
 		} else {
 			_countdown.addClass('countdown--valid').removeClass('countdown--invalid');
 		}
@@ -24,6 +29,9 @@
 
 			if (_remainingChars <= 0) {
 				_countdown.addClass('countdown--invalid').removeClass('countdown--valid');
+				if (settings.preventExcessChars) {
+					_input.val(_input.val().substr(0, settings.charLimit));
+				}
 			} else {
 				_countdown.addClass('countdown--valid').removeClass('countdown--invalid');
 			}
